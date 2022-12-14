@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    max-height: 500px;
+    background-image:url("media/dinofondo.png");
+    background-repeat: no-repeat;
+    background-size: 1600px 750px;
+    
+}
+
+h1{ font-size: 3.5em;}
+h2{ font-size: 2.7em;}
+h3{ font-size: 2em;}
+p{ font-size: 1.25em;}
+
+.container{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.color-acento{ color:blue; }
+
+header{
+    background-color: #188855;
+}
+
+header .logo{
+    margin: auto;
+    margin-top: 25px;
+    text-align:center;
+    font-weight: bold;
+    color: #C9F1D6;
+    font-size: 1.6em;
+}
+
+#xinfo{
+    text-align: center;
+}
+
+
+@media (min-width: 850px){
+    header{
+        position: fixed;
+        width: 100%;
+    }
+
+    #principal h1{
+        font-size: 4em;
+    }
+}
+img.bis{
+    padding: -50px 0px;
+    scale: 0.5;
+    filter: grayscale(100%)
+}
+
+img.tij{
+    text-align:center;
+    margin-top: -1210px;
+    scale: 0.175;
+    filter: grayscale(100%)
+}
+img.pin{
+    padding: 0px 0px;
+    margin-right: -350px;
+    margin-top: -1525px;
+    scale: 0.3;
+}

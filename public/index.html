@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Práctica 3</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+            <h1 class="logo">Proyecto Final de Telemedicina</p>
+    </header>
+    <br><br><br><br><br>
+    <section id="co">
+    <p id="xinfo">INTEGRANTES DEL EQUIPO:</p>
+    <p id="xinfo">Hermosillo Rivera Luis Antonio</p>
+    <p id="xinfo">Gonzalez Alvarez Victor Samuel</p>
+    <img id="bis" class="bis" src="media/bisturi.png">
+    <img id="Tij" class="tij" src="media/tijeras.png">
+    <button id="boton">actuar</button>
+ 
+</section>
+<img id="Pin" class="pin" src="media/pinzas.png" align="right">
+</body>
+<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+<script >
+    var socket = io.connect('34.125.8.32:5001', {'forceNew':true});
+    const imgBis = document.getElementById("bis");
+    const imgTij = document.getElementById("Tij");
+    const imgPin = document.getElementById("Pin");
+
+    socket.on('desde_servidor', function(mensaje) {
+        console.log(mensaje);
+        if (mensaje == "ON Tijeras"){
+            imgTij.style.filter='grayscale(0%)';
+        }
+        if (mensaje == "OFF Tijeras"){
+            imgTij.style.filter='grayscale(100%)';
+        }
+        if (mensaje == "ON Bisturi"){
+            imgBis.style.filter='grayscale(0%)';
+        }
+        if (mensaje == "OFF Bisturi"){
+            imgBis.style.filter='grayscale(100%)';
+        }
+        if (mensaje == "ON Pinzas"){
+            imgPin.style.filter='sepia(100%)';
+        }
+        if (mensaje == "OFF Pinzas"){
+            imgPin.style.filter='sepia(0%)';
+        }
+    });
+</script>
+</html>
